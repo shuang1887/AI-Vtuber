@@ -4,9 +4,9 @@ from pydub import AudioSegment
 from pydub.playback import play
 import io
 
-# -------------------------------------------初始化---------------------------------------------------
-personal_access_token = 'pat_bQevgM7mmRPASBN82rJrW3QZx9YKEPfuUVHH7xVeQMUlryrunPaqMl2rdeEYN2FX'
-bot_id = '7454558624053542948'
+# -------------------------------------------COZE api 初始化---------------------------------------------------
+personal_access_token = ''
+bot_id = ''
 
 # 构造请求头
 header = {
@@ -92,14 +92,14 @@ def main():
             # 监控对话状态
             monitor(chat_id, conversation_id)
 
-            # 获取回复文本,并转换为lulu音色
+            # 获取回复文本,并转换为lulu音色(模型自己训练，参数需自己填写）
             bot_reply = get_response(chat_id, conversation_id)
             body_vits = {
                 "text": bot_reply,
                 "text_lang": "zh",
-                "ref_audio_path": "D://Edge Download//GPT-SoVITS-v2-240821//output//slicer_opt//lululive.mp3_0006184000_0006336320.wav",
+                "ref_audio_path": "",
                 "aux_ref_audio_paths": [],
-                "prompt_text": "我跳...我跳的时候你们听到的是几分钟啊？",
+                "prompt_text": "",
                 "prompt_lang": "zh",
                 "top_k": 5,
                 "top_p": 1,
